@@ -33,8 +33,9 @@ inflate =
     do isFinal <- inflateBlock fixedLit fixedDist
        moveWindow
        if isFinal
-          then checkChecksum >> finalize
-          else go fixedLit fixedDist
+          -- then checkChecksum >> finalize
+         then finalize
+         else go fixedLit fixedDist
   --
   checkChecksum =
     do advanceToByte
